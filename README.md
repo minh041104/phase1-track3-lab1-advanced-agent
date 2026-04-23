@@ -1,41 +1,90 @@
-# Lab 16 — Reflexion Agent Scaffold
+# Lab 16 - Reflexion Agent Scaffold
 
-Repo này cung cấp một khung sườn (scaffold) để xây dựng và đánh giá **Reflexion Agent**.
+Repo nay cung cap mot scaffold de xay dung va danh gia Reflexion Agent tren bai toan QA nhieu buoc.
 
-## 1. Mục tiêu của Repo
-- Repo hiện tại đang sử dụng **Mock Data** (`mock_runtime.py`) để giả lập phản hồi từ LLM.
-- Mục đích giúp học viên hiểu rõ về **flow**, các bước **loop**, cách thức hoạt động của cơ chế phản chiếu (reflection) và cách đánh giá (evaluation) mà không tốn chi phí API ban đầu.
+## Muc tieu
+- Hieu luong ReAct va Reflexion qua actor, evaluator, reflector.
+- Co the chay mock mode de debug nhanh va chay LLM that de benchmark.
+- Xuat `report.json` va `report.md` dung schema cho autograde.
 
-## 2. Nhiệm vụ của Học viên
-Học viên cần thực hiện các bước sau để hoàn thành bài lab:
-1. **Xây dựng Agent thật**: Thay thế phần mock bằng việc gọi LLM thật (sử dụng Local LLM như Ollama, vLLM hoặc các Simple LLM API như OpenAI, Gemini).
-2. **Chạy Benchmark thực tế**: Chạy đánh giá trên ít nhất **100 mẫu dữ liệu thật** từ bộ dataset **HotpotQA**.
-3. **Định dạng báo cáo**: Kết quả chạy phải đảm bảo xuất ra file report (`report.json` và `report.md`) có cùng định dạng (format) với code gốc để có thể chạy được công cụ chấm điểm tự động.
-4. **Tính toán Token thực tế**: Thay vì dùng số ước tính, học viên phải cài đặt logic tính toán lượng token tiêu thụ thực tế từ phản hồi của API.
+## Nhung gi da co trong scaffold
+- `src/reflexion_lab/schemas.py`: schema cho judge result, reflection, trace, run record.
+- `src/reflexion_lab/agents.py`: loop chay ReAct va Reflexion, gom token/latency theo tung attempt.
+- `src/reflexion_lab/runtime.py`: runtime `mock` va runtime OpenAI-compatible.
+- `src/reflexion_lab/prompts.py`: prompt cho actor, evaluator, reflector.
+- `src/reflexion_lab/reporting.py`: tong hop benchmark va xuat report.
+- `run_benchmark.py`: script benchmark.
+- `autograde.py`: script cham nhanh theo report schema.
 
-## 3. Cách chạy Lab (Scaffold)
+## Cach chay
 ```bash
-# Cài đặt môi trường
 python -m venv .venv
-source .venv/bin/activate
+.venv\Scripts\activate
 pip install -r requirements.txt
+```
 
-# Chạy benchmark (với mock data)
-python run_benchmark.py --dataset data/hotpot_mini.json --out-dir outputs/sample_run
-
-# Chạy chấm điểm tự động
+### Chay mock mode
+```bash
+python run_benchmark.py --dataset data/hotpot_mini.json --out-dir outputs/sample_run --mode mock
 python autograde.py --report-path outputs/sample_run/report.json
 ```
 
-## 4. Tiêu chí chấm điểm (Rubric)
-- **80% số điểm (80 điểm)**: Hoàn thiện đúng và đủ luồng (flow) cho Reflexion Agent, chạy thành công với LLM thật và dataset thật.
-- **20% số điểm (20 điểm)**: Thực hiện thêm ít nhất một trong các phần **Bonus** được nhắc đến trong mã nguồn (ví dụ: `structured_evaluator`, `reflection_memory`, `adaptive_max_attempts`, `memory_compression`, v.v. - xem chi tiết tại `autograde.py`).
+### Mot so tuy chon huu ich khi benchmark
+- `--limit 100`: chi lay 100 mau dau tien sau khi da shuffle/offset.
+- `--offset 100`: bo qua 100 mau dau.
+- `--shuffle --seed 13`: tron dataset truoc khi cat mau.
+- `--workers 4`: chay song song theo example, van giu tuan tu ben trong moi example.
+- `--timeout-s 120`: tang thoi gian cho moi request LLM.
+- `--max-retries 4 --retry-backoff-s 2`: tu dong retry khi timeout hoac gap loi tam thoi.
+- `--no-adaptive-attempts`: tat co che dung som khi Reflexion bi loop.
+- `--memory-limit 3`: chi giu lai mot cua so reflection memory ngan gon.
 
-## Thành phần mã nguồn
-- `src/reflexion_lab/schemas.py`: Định nghĩa các kiểu dữ liệu trace, record.
-- `src/reflexion_lab/prompts.py`: Nơi chứa các template prompt cho Actor, Evaluator và Reflector.
-- `src/reflexion_lab/mock_runtime.py`: (Cần thay thế) Logic giả lập phản hồi LLM.
-- `src/reflexion_lab/agents.py`: Cấu trúc chính của ReAct và Reflexion Agent.
-- `src/reflexion_lab/reporting.py`: Logic xuất báo cáo benchmark.
-- `run_benchmark.py`: Script chính để chạy đánh giá.
-- `autograde.py`: Công cụ hỗ trợ chấm điểm nhanh dựa trên report.
+### Chay voi OpenAI-compatible API
+Can cau hinh cac bien moi truong sau:
+- `OPENAI_API_KEY`
+- `OPENAI_MODEL`
+- `OPENAI_BASE_URL` (tuy chon, mac dinh `https://api.openai.com/v1`)
+
+Vi du:
+```bash
+set OPENAI_API_KEY=...
+set OPENAI_MODEL=gpt-4o-mini
+python run_benchmark.py --dataset path\to\hotpot_100.json --out-dir outputs\real_run --mode openai --limit 100 --shuffle --seed 13 --workers 4 --timeout-s 120 --max-retries 4
+```
+
+Neu van bi timeout, giam `--workers` xuong `2` hoac `3` truoc khi tang cao hon.
+
+Neu dung Ollama hoac vLLM voi OpenAI-compatible endpoint, chi can doi `OPENAI_BASE_URL`.
+
+### Chuan bi file HotpotQA dung schema cua lab
+```bash
+python prepare_hotpotqa.py path\to\hotpot_dev_distractor_v1.json data\hotpot_100.json --limit 100 --shuffle
+```
+
+Neu muon giam context de debug nhanh hon:
+```bash
+python prepare_hotpotqa.py path\to\hotpot_dev_distractor_v1.json data\hotpot_supporting_100.json --limit 100 --shuffle --supporting-only --max-contexts 2
+```
+
+## Yeu cau bai lab
+1. Thay mock bang LLM that.
+2. Chay benchmark tren it nhat 100 mau HotpotQA that.
+3. Giu dung format `report.json` va `report.md`.
+4. Ghi nhan token usage that tu API neu endpoint co tra `usage`.
+
+## Luu y
+- `data/hotpot_mini.json` chi de debug flow, khong du de dat yeu cau 100 mau.
+- Mock mode sinh token/latency gia lap de kiem tra logic, khong phai so lieu benchmark that.
+- Runtime OpenAI-compatible da doc `usage.total_tokens` neu API co tra ve; neu khong co thi fallback ve estimate.
+
+## Bonus co the lam them
+- `adaptive_max_attempts` (da co scaffold)
+- `memory_compression` (da co scaffold)
+- `plan_then_execute`
+- `mini_lats_branching`
+
+## Kiem tra nhanh
+```bash
+python run_benchmark.py --dataset data/hotpot_mini.json --out-dir outputs/sample_run --mode mock
+python autograde.py --report-path outputs/sample_run/report.json
+```
