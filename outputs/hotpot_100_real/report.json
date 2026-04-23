@@ -1,0 +1,2060 @@
+{
+  "meta": {
+    "dataset": "hotpot_100.json",
+    "mode": "openai",
+    "num_records": 200,
+    "agents": [
+      "react",
+      "reflexion"
+    ]
+  },
+  "summary": {
+    "react": {
+      "count": 100,
+      "em": 0.77,
+      "avg_attempts": 1,
+      "avg_token_estimate": 2944.09,
+      "avg_latency_ms": 4561.15
+    },
+    "reflexion": {
+      "count": 100,
+      "em": 0.89,
+      "avg_attempts": 1.25,
+      "avg_token_estimate": 4249.03,
+      "avg_latency_ms": 8987.17
+    },
+    "delta_reflexion_minus_react": {
+      "em_abs": 0.12,
+      "attempts_abs": 0.25,
+      "tokens_abs": 1304.94,
+      "latency_abs": 4426.02
+    }
+  },
+  "failure_modes": {
+    "overall": {
+      "none": 166,
+      "wrong_final_answer": 23,
+      "looping": 9,
+      "reflection_overfit": 2
+    },
+    "react": {
+      "none": 77,
+      "wrong_final_answer": 23
+    },
+    "reflexion": {
+      "none": 89,
+      "looping": 9,
+      "reflection_overfit": 2
+    }
+  },
+  "examples": [
+    {
+      "qid": "5a7a33a35542994f819ef14c",
+      "agent_type": "react",
+      "gold_answer": "Anne",
+      "predicted_answer": "Anne",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab414295542996a3a969f1d",
+      "agent_type": "react",
+      "gold_answer": "an acting career",
+      "predicted_answer": "Brandon Routh moved to Los Angeles to pursue an acting career.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8510a25542994c784ddaf0",
+      "agent_type": "react",
+      "gold_answer": "writer",
+      "predicted_answer": "Both Stephen Jay Gould and Ann Beattie are writers.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae2eda355429928c4239570",
+      "agent_type": "react",
+      "gold_answer": "William Shakespeare",
+      "predicted_answer": "William Shakespeare",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae731ae5542991bbc9761c1",
+      "agent_type": "react",
+      "gold_answer": "Halliwell Jones Stadium",
+      "predicted_answer": "Warrington Wolves play at the Halliwell Jones Stadium.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac00278554299012d1db56b",
+      "agent_type": "react",
+      "gold_answer": "director",
+      "predicted_answer": "Both Raj Kapoor and Mike Cahill are film directors.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a713ea95542994082a3e6e4",
+      "agent_type": "react",
+      "gold_answer": "Apalachees",
+      "predicted_answer": "Ais tribe",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abd6cb955429933744ab7cd",
+      "agent_type": "react",
+      "gold_answer": "Norse",
+      "predicted_answer": "Norse mythology",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae826675542997ec2727733",
+      "agent_type": "react",
+      "gold_answer": "The Land of Enchantment",
+      "predicted_answer": "The Land of Enchantment",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7280925542991f9a20c4a1",
+      "agent_type": "react",
+      "gold_answer": "2009",
+      "predicted_answer": "2009",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7a8a9c554299042af8f666",
+      "agent_type": "react",
+      "gold_answer": "Argand lamp",
+      "predicted_answer": "Argand lamp",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abd580855429924427fcfb8",
+      "agent_type": "react",
+      "gold_answer": "country",
+      "predicted_answer": "Country music",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7af4bb55429927d897bf1d",
+      "agent_type": "react",
+      "gold_answer": "1926",
+      "predicted_answer": "Uriel Weinreich was born on 23 May 1926.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8ba92c554299240d9c2071",
+      "agent_type": "react",
+      "gold_answer": "North Carolina",
+      "predicted_answer": "North Carolina",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7217f255429971e9dc9260",
+      "agent_type": "react",
+      "gold_answer": "Sir Nicholas Raymond Winterton",
+      "predicted_answer": "Sir Nicholas Winterton",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7d9d2b5542997cc2c47464",
+      "agent_type": "react",
+      "gold_answer": "Victorian College of the Arts and Melbourne Conservatorium of Music",
+      "predicted_answer": "University of Melbourne Conservatorium",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7263e05542997f82783998",
+      "agent_type": "react",
+      "gold_answer": "Bonkyll Castle",
+      "predicted_answer": "Bonkyll Castle",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab849d955429916710eb017",
+      "agent_type": "react",
+      "gold_answer": "11 November 1918",
+      "predicted_answer": "December 7, 1917",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae4818f5542995ad6573d5b",
+      "agent_type": "react",
+      "gold_answer": "Piper",
+      "predicted_answer": "Cecily Strong played backup singer/dancer Pippa in the sketch \"What Up with That\".",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a820cb355429903bc27ba2f",
+      "agent_type": "react",
+      "gold_answer": "Reimar Horten",
+      "predicted_answer": "Reimar Horten",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8ef1e35542995a26add57a",
+      "agent_type": "react",
+      "gold_answer": "1954",
+      "predicted_answer": "1954",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a802b595542995d8a8ddf51",
+      "agent_type": "react",
+      "gold_answer": "D-Day",
+      "predicted_answer": "D-Day",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab9e2055542994dbf019884",
+      "agent_type": "react",
+      "gold_answer": "band",
+      "predicted_answer": "Both At the Drive-In and Muse are rock bands formed in the 1990s.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac4f12d55429924173fb4f6",
+      "agent_type": "react",
+      "gold_answer": "no",
+      "predicted_answer": "Yes, both Pravda and Stiffelio are operas.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abe50b45542991f6610613f",
+      "agent_type": "react",
+      "gold_answer": "Golden Gate National Recreation Area",
+      "predicted_answer": "Golden Gate National Recreation Area",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae13b085542997b2ef7d146",
+      "agent_type": "react",
+      "gold_answer": "250,000",
+      "predicted_answer": "250,000 acres",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a77beae5542992a6e59dfae",
+      "agent_type": "react",
+      "gold_answer": "Stacey Kent",
+      "predicted_answer": "Stacey Kent",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7f244255429934daa2fcec",
+      "agent_type": "react",
+      "gold_answer": "Grammar, logic, and rhetoric",
+      "predicted_answer": "Grammar, logic, and rhetoric.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5addffff5542992200553bdd",
+      "agent_type": "react",
+      "gold_answer": "10",
+      "predicted_answer": "10",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab67ce2554299710c8d1ead",
+      "agent_type": "react",
+      "gold_answer": "Disporum",
+      "predicted_answer": "Disporum",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae4c96355429913cc204506",
+      "agent_type": "react",
+      "gold_answer": "400 members",
+      "predicted_answer": "400 members",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac29cf8554299218029dac2",
+      "agent_type": "react",
+      "gold_answer": "Rowan Blanchard",
+      "predicted_answer": "Rowan Blanchard",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adc53f75542996e6852530a",
+      "agent_type": "react",
+      "gold_answer": "no",
+      "predicted_answer": "Yes, both Cypress and Ajuga are genera.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adf860e5542993344016cbc",
+      "agent_type": "react",
+      "gold_answer": "1964 to 1974",
+      "predicted_answer": "1964 to 1974",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae4075b55429970de88d87a",
+      "agent_type": "react",
+      "gold_answer": "Nikita Khrushchev",
+      "predicted_answer": "Nikita Khrushchev was responsible for the Soviet\u2013Albanian split.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8d9f35554299441c6ba018",
+      "agent_type": "react",
+      "gold_answer": "no",
+      "predicted_answer": "No.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab761d955429928e1fe3856",
+      "agent_type": "react",
+      "gold_answer": "Christian Kern",
+      "predicted_answer": "Christian Kern",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7db1a15542995ed0d16660",
+      "agent_type": "react",
+      "gold_answer": "Arnel Campaner Pineda",
+      "predicted_answer": "Arnel Pineda was born first.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7312675542994cef4bc43d",
+      "agent_type": "react",
+      "gold_answer": "Adolfo Rodr\u00edguez Sa\u00e1",
+      "predicted_answer": "Adolfo Rodr\u00edguez Sa\u00e1",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8ee7c95542990e94052bb1",
+      "agent_type": "react",
+      "gold_answer": "\"Bad Moon Rising\"",
+      "predicted_answer": "\"Bad Moon Rising\"",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7c25035542997c3ec972e5",
+      "agent_type": "react",
+      "gold_answer": "Kolkata",
+      "predicted_answer": "Mumbai",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a825b0e55429954d2e2eb0c",
+      "agent_type": "react",
+      "gold_answer": "Hanako Muraoka",
+      "predicted_answer": "Hanako Muraoka",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab632aa55429953192ad296",
+      "agent_type": "react",
+      "gold_answer": "goalkeeper",
+      "predicted_answer": "Goalkeeper",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a753ff455429916b01642bc",
+      "agent_type": "react",
+      "gold_answer": "Monique Wittig",
+      "predicted_answer": "Monique Wittig",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac05310554299012d1db5e7",
+      "agent_type": "react",
+      "gold_answer": "Ron Goldman",
+      "predicted_answer": "Ron Goldman",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab52a255542996a3a96a048",
+      "agent_type": "react",
+      "gold_answer": "Sochi, Russia",
+      "predicted_answer": "Lillehammer, Norway",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a72f0e25542991f9a20c5cf",
+      "agent_type": "react",
+      "gold_answer": "Anne",
+      "predicted_answer": "Anne (TV series)",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a74994a55429974ef308c2e",
+      "agent_type": "react",
+      "gold_answer": "Charlie Wilson",
+      "predicted_answer": "Charlie Wilson",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae4932855429970de88d9b8",
+      "agent_type": "react",
+      "gold_answer": "Panera Bread Company",
+      "predicted_answer": "Panera Bread",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a84800f554299123d8c2276",
+      "agent_type": "react",
+      "gold_answer": "1861\u201365",
+      "predicted_answer": "1861\u20131865",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7cd7f055429909bec7683e",
+      "agent_type": "react",
+      "gold_answer": "Juilliard School",
+      "predicted_answer": "Juilliard School",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae048a255429924de1b708e",
+      "agent_type": "react",
+      "gold_answer": "Catwoman",
+      "predicted_answer": "Catwoman",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac557975542993e66e8231c",
+      "agent_type": "react",
+      "gold_answer": "Oklahoma Sooners",
+      "predicted_answer": "Oklahoma Sooners",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adddccd5542997dc7907069",
+      "agent_type": "react",
+      "gold_answer": "keyboard function keys",
+      "predicted_answer": "Siri Remote",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abd920e55429924427fd05d",
+      "agent_type": "react",
+      "gold_answer": "yes",
+      "predicted_answer": "No, only Fred Niblo was an actor. Peter Duffell was a director and screenwriter.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac2da27554299657fa2909f",
+      "agent_type": "react",
+      "gold_answer": "Oyster Bay",
+      "predicted_answer": "Massapequa, New York",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7fb90655429969796c1b34",
+      "agent_type": "react",
+      "gold_answer": "Raymond Patterson",
+      "predicted_answer": "Muhammad Ali",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a73bcf055429978a71e909c",
+      "agent_type": "react",
+      "gold_answer": "Howard Melvin Fast",
+      "predicted_answer": "Howard Fast",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae0bf3a55429906c02dab21",
+      "agent_type": "react",
+      "gold_answer": "John Delaney",
+      "predicted_answer": "John Delaney",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8e8f6f5542995085b37451",
+      "agent_type": "react",
+      "gold_answer": "Jingjiang",
+      "predicted_answer": "Jingjiang",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab506a05542990594ba9cd6",
+      "agent_type": "react",
+      "gold_answer": "Sonerila",
+      "predicted_answer": "Scaevola has more species than Sonerila.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac02c6b554299294b218f38",
+      "agent_type": "react",
+      "gold_answer": "is a song written and produced by Andr\u00e9 3000",
+      "predicted_answer": "Andr\u00e9 3000",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a76fe7b5542994aec3b71b2",
+      "agent_type": "react",
+      "gold_answer": "The Institute for Advanced Study",
+      "predicted_answer": "Princeton University",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a81711455429938b614233e",
+      "agent_type": "react",
+      "gold_answer": "yes",
+      "predicted_answer": "No, \"Cooking Light\" is a food and lifestyle magazine, while \"Vibe\" is a music and entertainment magazine.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac47d7355429919431739b3",
+      "agent_type": "react",
+      "gold_answer": "Johannes Vermeer",
+      "predicted_answer": "Johannes Vermeer",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab5df4c5542997d4ad1f218",
+      "agent_type": "react",
+      "gold_answer": "25 April",
+      "predicted_answer": "Ben McNiece made his AFL debut in the Anzac Day clash against Collingwood on 25 April 2017.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ade063d5542997dc7907129",
+      "agent_type": "react",
+      "gold_answer": "wealthy businessman",
+      "predicted_answer": "A wealthy businessman.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab833ad5542990e739ec86f",
+      "agent_type": "react",
+      "gold_answer": "Estadio Victoria",
+      "predicted_answer": "Club Necaxa",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab7f3285542992aa3b8c88f",
+      "agent_type": "react",
+      "gold_answer": "the Haitian Revolution",
+      "predicted_answer": "Haitian Revolution",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac272f95542992f1f2b38d3",
+      "agent_type": "react",
+      "gold_answer": "yes",
+      "predicted_answer": "No, Graptopetalum is native to Mexico and Arizona, while Couroupita is native to Central and South America.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a74879255429974ef308c1d",
+      "agent_type": "react",
+      "gold_answer": "Do\u00f1ana National Park",
+      "predicted_answer": "Do\u00f1ana National Park is larger.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab431d855429942dd415ed2",
+      "agent_type": "react",
+      "gold_answer": "Jaguar Land Rover",
+      "predicted_answer": "Jaguar Land Rover",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5aba8d4655429901930fa82b",
+      "agent_type": "react",
+      "gold_answer": "\"Woody\" Allen",
+      "predicted_answer": "Woody Allen",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a802bf05542992bc0c4a6b7",
+      "agent_type": "react",
+      "gold_answer": "thirteen",
+      "predicted_answer": "thirteen",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae738f75542991bbc9761c4",
+      "agent_type": "react",
+      "gold_answer": "2003",
+      "predicted_answer": "2003",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8de4595542995085b37348",
+      "agent_type": "react",
+      "gold_answer": "II",
+      "predicted_answer": "Seal II",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8081975542992097ad2fef",
+      "agent_type": "react",
+      "gold_answer": "Leslie Goodwins",
+      "predicted_answer": "Leslie Goodwins directed more films.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8f08c2554299458435d530",
+      "agent_type": "react",
+      "gold_answer": "Peter Kay's Car Share",
+      "predicted_answer": "Peter Kay's Car Share",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab8ca5d5542991b5579f005",
+      "agent_type": "react",
+      "gold_answer": "Premier League club Everton",
+      "predicted_answer": "Everton",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7f46115542994857a766d9",
+      "agent_type": "react",
+      "gold_answer": "Rothschild banking dynasty",
+      "predicted_answer": "Rothschild dynasty",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a722fae55429971e9dc9343",
+      "agent_type": "react",
+      "gold_answer": "Chlo\u00eb Alexandra Adele Emily Agnew",
+      "predicted_answer": "Chlo\u00eb Agnew",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab295eb554299194fa93412",
+      "agent_type": "react",
+      "gold_answer": "no",
+      "predicted_answer": "Yes, both Ernst Messerschmid and Reinhold Ewald were ESA astronauts.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a85f4ec5542994775f606c6",
+      "agent_type": "react",
+      "gold_answer": "Czech",
+      "predicted_answer": "Czech",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab7c3ed5542991d322237b2",
+      "agent_type": "react",
+      "gold_answer": "yes",
+      "predicted_answer": "Yes.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac036b95542992a796deccd",
+      "agent_type": "react",
+      "gold_answer": "EN World web site",
+      "predicted_answer": "The name of the award is derived from the EN World web site.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac3ba0455429939154138f2",
+      "agent_type": "react",
+      "gold_answer": "China",
+      "predicted_answer": "Russia",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a71299e5542994082a3e5fe",
+      "agent_type": "react",
+      "gold_answer": "Black pudding",
+      "predicted_answer": "Drisheen is a type of blood pudding made in Ireland.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abc3d215542993a06baf8a5",
+      "agent_type": "react",
+      "gold_answer": "Acharacle",
+      "predicted_answer": "Acharacle",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8e82ff5542995a26add4e2",
+      "agent_type": "react",
+      "gold_answer": "Luger P08",
+      "predicted_answer": "Walther P38",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a75a4135542992d0ec05fcd",
+      "agent_type": "react",
+      "gold_answer": "Rockhill Furnace, Pennsylvania",
+      "predicted_answer": "Rockhill Iron and Coal Company.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac3a7ce554299391541388f",
+      "agent_type": "react",
+      "gold_answer": "no",
+      "predicted_answer": "No, Dichroa is native to eastern and southeastern Asia, while Lathyrus is native to Europe.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac54ca45542993e66e822d5",
+      "agent_type": "react",
+      "gold_answer": "The Blue Album",
+      "predicted_answer": "Weezer (The Blue Album)",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae0cddc55429945ae959459",
+      "agent_type": "react",
+      "gold_answer": "35 people",
+      "predicted_answer": "35 people",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7b60605542995eb53be931",
+      "agent_type": "react",
+      "gold_answer": "1907",
+      "predicted_answer": "Pike Place Market opened in 1907.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab9535a5542996be202047e",
+      "agent_type": "react",
+      "gold_answer": "ten",
+      "predicted_answer": "The second season of \"Rick and Morty\" had a total of ten episodes.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adf35935542993344016c36",
+      "agent_type": "react",
+      "gold_answer": "\"Dr. Death\" Steve Williams",
+      "predicted_answer": "\"Dr. Death\" Steve Williams",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5aba72d75542994dbf019912",
+      "agent_type": "react",
+      "gold_answer": "The NorthCap University",
+      "predicted_answer": "The Northcap University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae588cb55429960a22e0300",
+      "agent_type": "react",
+      "gold_answer": "Chaerophyllum",
+      "predicted_answer": "Chaerophyllum",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5add64e35542992200553ae8",
+      "agent_type": "react",
+      "gold_answer": "Pound Puppies and the Legend of Big Paw",
+      "predicted_answer": "Pound Puppies and the Legend of Big Paw",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a773ec355429966f1a36ccb",
+      "agent_type": "react",
+      "gold_answer": "Liz",
+      "predicted_answer": "Liz",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7a33a35542994f819ef14c",
+      "agent_type": "reflexion",
+      "gold_answer": "Anne",
+      "predicted_answer": "Anne",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab414295542996a3a969f1d",
+      "agent_type": "reflexion",
+      "gold_answer": "an acting career",
+      "predicted_answer": "Brandon Routh moved to Los Angeles to pursue an acting career.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8510a25542994c784ddaf0",
+      "agent_type": "reflexion",
+      "gold_answer": "writer",
+      "predicted_answer": "Both Stephen Jay Gould and Ann Beattie are writers.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae2eda355429928c4239570",
+      "agent_type": "reflexion",
+      "gold_answer": "William Shakespeare",
+      "predicted_answer": "William Shakespeare",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae731ae5542991bbc9761c1",
+      "agent_type": "reflexion",
+      "gold_answer": "Halliwell Jones Stadium",
+      "predicted_answer": "Warrington Wolves play at the Halliwell Jones Stadium.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac00278554299012d1db56b",
+      "agent_type": "reflexion",
+      "gold_answer": "director",
+      "predicted_answer": "Both Raj Kapoor and Mike Cahill are film directors.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a713ea95542994082a3e6e4",
+      "agent_type": "reflexion",
+      "gold_answer": "Apalachees",
+      "predicted_answer": "Ais tribe.",
+      "is_correct": false,
+      "attempts": 2,
+      "failure_mode": "looping",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5abd6cb955429933744ab7cd",
+      "agent_type": "reflexion",
+      "gold_answer": "Norse",
+      "predicted_answer": "Norse mythology",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae826675542997ec2727733",
+      "agent_type": "reflexion",
+      "gold_answer": "The Land of Enchantment",
+      "predicted_answer": "The Land of Enchantment",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7280925542991f9a20c4a1",
+      "agent_type": "reflexion",
+      "gold_answer": "2009",
+      "predicted_answer": "2009",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7a8a9c554299042af8f666",
+      "agent_type": "reflexion",
+      "gold_answer": "Argand lamp",
+      "predicted_answer": "Argand lamp",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abd580855429924427fcfb8",
+      "agent_type": "reflexion",
+      "gold_answer": "country",
+      "predicted_answer": "Country music",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7af4bb55429927d897bf1d",
+      "agent_type": "reflexion",
+      "gold_answer": "1926",
+      "predicted_answer": "Uriel Weinreich was born on 23 May 1926.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8ba92c554299240d9c2071",
+      "agent_type": "reflexion",
+      "gold_answer": "North Carolina",
+      "predicted_answer": "North Carolina",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7217f255429971e9dc9260",
+      "agent_type": "reflexion",
+      "gold_answer": "Sir Nicholas Raymond Winterton",
+      "predicted_answer": "Sir Nicholas Winterton",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7d9d2b5542997cc2c47464",
+      "agent_type": "reflexion",
+      "gold_answer": "Victorian College of the Arts and Melbourne Conservatorium of Music",
+      "predicted_answer": "Roy Shepherd was considered a faculty member of the University of Melbourne Conservatorium and the Victorian College of the Arts.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "5a7263e05542997f82783998",
+      "agent_type": "reflexion",
+      "gold_answer": "Bonkyll Castle",
+      "predicted_answer": "Bonkyll Castle",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab849d955429916710eb017",
+      "agent_type": "reflexion",
+      "gold_answer": "11 November 1918",
+      "predicted_answer": "December 7, 1917",
+      "is_correct": false,
+      "attempts": 2,
+      "failure_mode": "looping",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ae4818f5542995ad6573d5b",
+      "agent_type": "reflexion",
+      "gold_answer": "Piper",
+      "predicted_answer": "Cecily Strong played the character Piper in the sketch \"What Up with That\".",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "5a820cb355429903bc27ba2f",
+      "agent_type": "reflexion",
+      "gold_answer": "Reimar Horten",
+      "predicted_answer": "Reimar Horten",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8ef1e35542995a26add57a",
+      "agent_type": "reflexion",
+      "gold_answer": "1954",
+      "predicted_answer": "1954",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a802b595542995d8a8ddf51",
+      "agent_type": "reflexion",
+      "gold_answer": "D-Day",
+      "predicted_answer": "D-Day",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab9e2055542994dbf019884",
+      "agent_type": "reflexion",
+      "gold_answer": "band",
+      "predicted_answer": "Both At the Drive-In and Muse are rock bands formed in the 1990s.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac4f12d55429924173fb4f6",
+      "agent_type": "reflexion",
+      "gold_answer": "no",
+      "predicted_answer": "No, only Stiffelio is an opera.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "reflection_overfit",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5abe50b45542991f6610613f",
+      "agent_type": "reflexion",
+      "gold_answer": "Golden Gate National Recreation Area",
+      "predicted_answer": "Golden Gate National Recreation Area",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae13b085542997b2ef7d146",
+      "agent_type": "reflexion",
+      "gold_answer": "250,000",
+      "predicted_answer": "250,000 acres",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a77beae5542992a6e59dfae",
+      "agent_type": "reflexion",
+      "gold_answer": "Stacey Kent",
+      "predicted_answer": "Stacey Kent",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7f244255429934daa2fcec",
+      "agent_type": "reflexion",
+      "gold_answer": "Grammar, logic, and rhetoric",
+      "predicted_answer": "Grammar, logic, and rhetoric.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5addffff5542992200553bdd",
+      "agent_type": "reflexion",
+      "gold_answer": "10",
+      "predicted_answer": "10",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab67ce2554299710c8d1ead",
+      "agent_type": "reflexion",
+      "gold_answer": "Disporum",
+      "predicted_answer": "Disporum",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae4c96355429913cc204506",
+      "agent_type": "reflexion",
+      "gold_answer": "400 members",
+      "predicted_answer": "400 members",
+      "is_correct": false,
+      "attempts": 2,
+      "failure_mode": "looping",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ac29cf8554299218029dac2",
+      "agent_type": "reflexion",
+      "gold_answer": "Rowan Blanchard",
+      "predicted_answer": "Rowan Blanchard",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adc53f75542996e6852530a",
+      "agent_type": "reflexion",
+      "gold_answer": "no",
+      "predicted_answer": "No, only Cypress is a genus.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adf860e5542993344016cbc",
+      "agent_type": "reflexion",
+      "gold_answer": "1964 to 1974",
+      "predicted_answer": "1964 to 1974",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae4075b55429970de88d87a",
+      "agent_type": "reflexion",
+      "gold_answer": "Nikita Khrushchev",
+      "predicted_answer": "The Soviet\u2013Albanian split was primarily due to the policies of Soviet leader Nikita Khrushchev, particularly his rapprochement with Yugoslavia and de-Stalinization efforts, which the Albanian leadership under Enver Hoxha opposed.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "5a8d9f35554299441c6ba018",
+      "agent_type": "reflexion",
+      "gold_answer": "no",
+      "predicted_answer": "No.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab761d955429928e1fe3856",
+      "agent_type": "reflexion",
+      "gold_answer": "Christian Kern",
+      "predicted_answer": "Christian Kern",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7db1a15542995ed0d16660",
+      "agent_type": "reflexion",
+      "gold_answer": "Arnel Campaner Pineda",
+      "predicted_answer": "Arnel Pineda was born first.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7312675542994cef4bc43d",
+      "agent_type": "reflexion",
+      "gold_answer": "Adolfo Rodr\u00edguez Sa\u00e1",
+      "predicted_answer": "Adolfo Rodr\u00edguez Sa\u00e1",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8ee7c95542990e94052bb1",
+      "agent_type": "reflexion",
+      "gold_answer": "\"Bad Moon Rising\"",
+      "predicted_answer": "\"Bad Moon Rising\" by Creedence Clearwater Revival.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7c25035542997c3ec972e5",
+      "agent_type": "reflexion",
+      "gold_answer": "Kolkata",
+      "predicted_answer": "Kolkata",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "5a825b0e55429954d2e2eb0c",
+      "agent_type": "reflexion",
+      "gold_answer": "Hanako Muraoka",
+      "predicted_answer": "Hanako Muraoka",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab632aa55429953192ad296",
+      "agent_type": "reflexion",
+      "gold_answer": "goalkeeper",
+      "predicted_answer": "Goalkeeper",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a753ff455429916b01642bc",
+      "agent_type": "reflexion",
+      "gold_answer": "Monique Wittig",
+      "predicted_answer": "Monique Wittig",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac05310554299012d1db5e7",
+      "agent_type": "reflexion",
+      "gold_answer": "Ron Goldman",
+      "predicted_answer": "Ron Goldman",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab52a255542996a3a96a048",
+      "agent_type": "reflexion",
+      "gold_answer": "Sochi, Russia",
+      "predicted_answer": "Sochi, Russia",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "5a72f0e25542991f9a20c5cf",
+      "agent_type": "reflexion",
+      "gold_answer": "Anne",
+      "predicted_answer": "Anne (TV series)",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a74994a55429974ef308c2e",
+      "agent_type": "reflexion",
+      "gold_answer": "Charlie Wilson",
+      "predicted_answer": "Charlie Wilson",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae4932855429970de88d9b8",
+      "agent_type": "reflexion",
+      "gold_answer": "Panera Bread Company",
+      "predicted_answer": "Panera Bread",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a84800f554299123d8c2276",
+      "agent_type": "reflexion",
+      "gold_answer": "1861\u201365",
+      "predicted_answer": "1861\u20131865",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7cd7f055429909bec7683e",
+      "agent_type": "reflexion",
+      "gold_answer": "Juilliard School",
+      "predicted_answer": "Juilliard School",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae048a255429924de1b708e",
+      "agent_type": "reflexion",
+      "gold_answer": "Catwoman",
+      "predicted_answer": "Catwoman",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac557975542993e66e8231c",
+      "agent_type": "reflexion",
+      "gold_answer": "Oklahoma Sooners",
+      "predicted_answer": "Oklahoma Sooners",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "5adddccd5542997dc7907069",
+      "agent_type": "reflexion",
+      "gold_answer": "keyboard function keys",
+      "predicted_answer": "Siri Remote",
+      "is_correct": false,
+      "attempts": 2,
+      "failure_mode": "looping",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5abd920e55429924427fd05d",
+      "agent_type": "reflexion",
+      "gold_answer": "yes",
+      "predicted_answer": "No, only Fred Niblo was an actor.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "reflection_overfit",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ac2da27554299657fa2909f",
+      "agent_type": "reflexion",
+      "gold_answer": "Oyster Bay",
+      "predicted_answer": "Massapequa, New York",
+      "is_correct": false,
+      "attempts": 2,
+      "failure_mode": "looping",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a7fb90655429969796c1b34",
+      "agent_type": "reflexion",
+      "gold_answer": "Raymond Patterson",
+      "predicted_answer": "Muhammad Ali",
+      "is_correct": false,
+      "attempts": 2,
+      "failure_mode": "looping",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a73bcf055429978a71e909c",
+      "agent_type": "reflexion",
+      "gold_answer": "Howard Melvin Fast",
+      "predicted_answer": "Howard Fast",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae0bf3a55429906c02dab21",
+      "agent_type": "reflexion",
+      "gold_answer": "John Delaney",
+      "predicted_answer": "John Delaney",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8e8f6f5542995085b37451",
+      "agent_type": "reflexion",
+      "gold_answer": "Jingjiang",
+      "predicted_answer": "Jingjiang",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab506a05542990594ba9cd6",
+      "agent_type": "reflexion",
+      "gold_answer": "Sonerila",
+      "predicted_answer": "Sonerila has more species than Scaevola.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "5ac02c6b554299294b218f38",
+      "agent_type": "reflexion",
+      "gold_answer": "is a song written and produced by Andr\u00e9 3000",
+      "predicted_answer": "Andr\u00e9 3000",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a76fe7b5542994aec3b71b2",
+      "agent_type": "reflexion",
+      "gold_answer": "The Institute for Advanced Study",
+      "predicted_answer": "Princeton University",
+      "is_correct": false,
+      "attempts": 2,
+      "failure_mode": "looping",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a81711455429938b614233e",
+      "agent_type": "reflexion",
+      "gold_answer": "yes",
+      "predicted_answer": "Yes.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "5ac47d7355429919431739b3",
+      "agent_type": "reflexion",
+      "gold_answer": "Johannes Vermeer",
+      "predicted_answer": "Johannes Vermeer",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab5df4c5542997d4ad1f218",
+      "agent_type": "reflexion",
+      "gold_answer": "25 April",
+      "predicted_answer": "Ben McNiece made his AFL debut in the Anzac Day clash against Collingwood on 25 April 2017.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ade063d5542997dc7907129",
+      "agent_type": "reflexion",
+      "gold_answer": "wealthy businessman",
+      "predicted_answer": "A wealthy businessman.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab833ad5542990e739ec86f",
+      "agent_type": "reflexion",
+      "gold_answer": "Estadio Victoria",
+      "predicted_answer": "Estadio Victoria",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "5ab7f3285542992aa3b8c88f",
+      "agent_type": "reflexion",
+      "gold_answer": "the Haitian Revolution",
+      "predicted_answer": "Haitian Revolution",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac272f95542992f1f2b38d3",
+      "agent_type": "reflexion",
+      "gold_answer": "yes",
+      "predicted_answer": "No, Graptopetalum is native to Mexico and Arizona, while Couroupita is native to Central and South America.",
+      "is_correct": false,
+      "attempts": 2,
+      "failure_mode": "looping",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a74879255429974ef308c1d",
+      "agent_type": "reflexion",
+      "gold_answer": "Do\u00f1ana National Park",
+      "predicted_answer": "Do\u00f1ana National Park is larger.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab431d855429942dd415ed2",
+      "agent_type": "reflexion",
+      "gold_answer": "Jaguar Land Rover",
+      "predicted_answer": "Jaguar Land Rover",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5aba8d4655429901930fa82b",
+      "agent_type": "reflexion",
+      "gold_answer": "\"Woody\" Allen",
+      "predicted_answer": "Woody Allen",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a802bf05542992bc0c4a6b7",
+      "agent_type": "reflexion",
+      "gold_answer": "thirteen",
+      "predicted_answer": "thirteen",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae738f75542991bbc9761c4",
+      "agent_type": "reflexion",
+      "gold_answer": "2003",
+      "predicted_answer": "2003",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8de4595542995085b37348",
+      "agent_type": "reflexion",
+      "gold_answer": "II",
+      "predicted_answer": "Seal II",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8081975542992097ad2fef",
+      "agent_type": "reflexion",
+      "gold_answer": "Leslie Goodwins",
+      "predicted_answer": "Leslie Goodwins directed more films.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8f08c2554299458435d530",
+      "agent_type": "reflexion",
+      "gold_answer": "Peter Kay's Car Share",
+      "predicted_answer": "Peter Kay's Car Share",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab8ca5d5542991b5579f005",
+      "agent_type": "reflexion",
+      "gold_answer": "Premier League club Everton",
+      "predicted_answer": "Everton",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7f46115542994857a766d9",
+      "agent_type": "reflexion",
+      "gold_answer": "Rothschild banking dynasty",
+      "predicted_answer": "Rothschild dynasty",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a722fae55429971e9dc9343",
+      "agent_type": "reflexion",
+      "gold_answer": "Chlo\u00eb Alexandra Adele Emily Agnew",
+      "predicted_answer": "Chlo\u00eb Agnew",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab295eb554299194fa93412",
+      "agent_type": "reflexion",
+      "gold_answer": "no",
+      "predicted_answer": "Yes, both Ernst Messerschmid and Reinhold Ewald were ESA astronauts.",
+      "is_correct": false,
+      "attempts": 2,
+      "failure_mode": "looping",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a85f4ec5542994775f606c6",
+      "agent_type": "reflexion",
+      "gold_answer": "Czech",
+      "predicted_answer": "Czech",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab7c3ed5542991d322237b2",
+      "agent_type": "reflexion",
+      "gold_answer": "yes",
+      "predicted_answer": "Yes.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac036b95542992a796deccd",
+      "agent_type": "reflexion",
+      "gold_answer": "EN World web site",
+      "predicted_answer": "The name of the award is derived from the EN World web site.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac3ba0455429939154138f2",
+      "agent_type": "reflexion",
+      "gold_answer": "China",
+      "predicted_answer": "China",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "5a71299e5542994082a3e5fe",
+      "agent_type": "reflexion",
+      "gold_answer": "Black pudding",
+      "predicted_answer": "Drisheen is a type of blood pudding made in Ireland.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abc3d215542993a06baf8a5",
+      "agent_type": "reflexion",
+      "gold_answer": "Acharacle",
+      "predicted_answer": "Acharacle",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8e82ff5542995a26add4e2",
+      "agent_type": "reflexion",
+      "gold_answer": "Luger P08",
+      "predicted_answer": "Luger P08",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "5a75a4135542992d0ec05fcd",
+      "agent_type": "reflexion",
+      "gold_answer": "Rockhill Furnace, Pennsylvania",
+      "predicted_answer": "Rockhill Furnace, Pennsylvania.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "5ac3a7ce554299391541388f",
+      "agent_type": "reflexion",
+      "gold_answer": "no",
+      "predicted_answer": "No, Dichroa is native to eastern and southeastern Asia, while Lathyrus is native to Europe.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac54ca45542993e66e822d5",
+      "agent_type": "reflexion",
+      "gold_answer": "The Blue Album",
+      "predicted_answer": "Weezer (The Blue Album)",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae0cddc55429945ae959459",
+      "agent_type": "reflexion",
+      "gold_answer": "35 people",
+      "predicted_answer": "35 people",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7b60605542995eb53be931",
+      "agent_type": "reflexion",
+      "gold_answer": "1907",
+      "predicted_answer": "Pike Place Market opened in 1907, while Beecher's Handmade Cheese was founded in 2003. Therefore, Pike Place Market opened first in 1907.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab9535a5542996be202047e",
+      "agent_type": "reflexion",
+      "gold_answer": "ten",
+      "predicted_answer": "The second season of \"Rick and Morty\" had a total of ten episodes.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adf35935542993344016c36",
+      "agent_type": "reflexion",
+      "gold_answer": "\"Dr. Death\" Steve Williams",
+      "predicted_answer": "\"Dr. Death\" Steve Williams",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5aba72d75542994dbf019912",
+      "agent_type": "reflexion",
+      "gold_answer": "The NorthCap University",
+      "predicted_answer": "The Northcap University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae588cb55429960a22e0300",
+      "agent_type": "reflexion",
+      "gold_answer": "Chaerophyllum",
+      "predicted_answer": "Chaerophyllum",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5add64e35542992200553ae8",
+      "agent_type": "reflexion",
+      "gold_answer": "Pound Puppies and the Legend of Big Paw",
+      "predicted_answer": "Pound Puppies and the Legend of Big Paw",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a773ec355429966f1a36ccb",
+      "agent_type": "reflexion",
+      "gold_answer": "Liz",
+      "predicted_answer": "Liz",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    }
+  ],
+  "extensions": [
+    "structured_evaluator",
+    "reflection_memory",
+    "benchmark_report_json",
+    "adaptive_max_attempts",
+    "memory_compression"
+  ],
+  "discussion": "Reflexion improved exact match whenever the first answer stopped after an intermediate hop or jumped to an unsupported entity. The main tradeoff was higher attempt count, higher token usage, and higher latency because the agent spent extra budget on evaluator and reflector calls. The remaining failure modes should be inspected by comparing the first wrong answer, the judge reason, and the next strategy recorded in the trace. In a real 100+ example HotpotQA run, this report should be expanded with concrete examples of when reflection memory helped, when the evaluator was too weak, and when extra attempts only increased cost without improving the final answer."
+}
